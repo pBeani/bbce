@@ -6,7 +6,8 @@
 
 .c3 path, .c3 line {
   fill: none;
-  stroke: #000;
+  stroke: #9297a0;
+  stroke-width: 6px;
 }
 
 .c3 text {
@@ -44,7 +45,7 @@
 }
 
 .c3-grid text {
-  fill: #aaa;
+  fill: red;
 }
 
 .c3-xgrid, .c3-ygrid {
@@ -53,7 +54,7 @@
 
 /*-- Text on Chart --*/
 .c3-text.c3-empty {
-  fill: #808080;
+  fill: red;
   font-size: 2em;
 }
 

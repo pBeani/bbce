@@ -5,7 +5,7 @@ main {
 }
 
 .graph {
-    width: 65%;
+    width: 400px;
     height: 400px;
 }
 
@@ -18,12 +18,19 @@ main {
 .card {
     margin-bottom: 50px;
     border-radius: 5px;
-    padding: 20px;
+    padding: 40px;
+}
+
+tspan {
+    font-size: 14px;
+    fill: #9297a0
 }
 
 /****** conteúdo de moedas ******/
 .money-section .card {
-    height: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: space-between
 }
 
 .current {
@@ -38,7 +45,6 @@ main {
 }
 
 .currency-value {
-    margin-left: 20px;
     font-size: 96px;
 }
 /****** fim do conteúdo de moedas ******/
