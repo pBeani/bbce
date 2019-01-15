@@ -1,15 +1,14 @@
 .dashboard{
-    background-color: #30336b;
+    background-color: #383c4a;
 }
-.lineChart{
+.principalChart{
     background-color: #fff;
     position: absolute;
-    top: 2%;
-    left: 2%;
+    top: 10px;
+    left: 10px;
+    width: 65%;
+    height: 50%;
 }
-.stockChart{
-    width: 99%;
-    height: 39%;
-    margin-left: 2%;
-    margin-bottom: 2%;
-}
+#stockChart{
+    margin-left: 1%;
+} 
