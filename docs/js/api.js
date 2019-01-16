@@ -1,12 +1,12 @@
 var API = (function () {
     var url = 'https://www.alphavantage.co/query?';
-
+    var key = 'QPE19VY9SFP1X29B';
+    var key2 = 'MKJI4VYH0ORRBDJR';
+    
     var getCustomUrl = {
-        dailyFX: function () {
-            return 'function=FX_DAILY&from_symbol=EUR&to_symbol=USD&outputsize=full&apikey=demo';
-        },
-        currentFX: function () {
-            return 'function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=demo';
+        dailyFX: function (params) {
+            var from = params.toUpperCase();
+            return `function=FX_DAILY&from_symbol=${from}&to_symbol=BRL&outputsize=compact&apikey=${key}`;
         }
     }
 

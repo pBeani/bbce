@@ -10,7 +10,7 @@ main {
 }
 
 .money-section {
-    width: 650px;
+    width: 750px;
     display: flex;
     flex-direction: column;
 }

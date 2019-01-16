@@ -15,10 +15,3 @@ function getDailyFX(settings, callback) {
         callback(formatedObj);
     })
 }
-
-function getCurrentFX(settings, callback) {
-    API.get('currentFX', settings, function (data) {
-        var currentValue = data['Realtime Currency Exchange Rate']['5. Exchange Rate']
-        callback(currentValue);
-    })
-}
