@@ -31,3 +31,4 @@ var API = (function () {
 
     return { get };
 })();
+alert('api')

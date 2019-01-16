@@ -10,6 +10,14 @@
 
 	<script type="text/javascript" src="js/d3-5.4.0.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/c3.js"></script>
+	<script type="text/javascript">
+		function log2(message) {
+			var node = document.createElement('LI');
+			var text = document.createTextNode(message);
+			node.appendChild(text);
+			document.getElementById('error').appendChild(node);
+		}
+	</script>
 </head>
 
 <body>
@@ -59,9 +67,15 @@
 			</article>
 		</section>
 	</main>
+	<script type="text/javascript">
+		log2('INLINE')
+	</script>
 	<script type="text/javascript" src="js/api.js"></script>
 	<script type="text/javascript" src="js/dataHandlers.js"></script>
 	<script type="text/javascript" src="js/money-charts.js"></script>
+
+
+
 </body>
 
 </html>
