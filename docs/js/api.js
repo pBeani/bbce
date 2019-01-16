@@ -15,9 +15,12 @@ var API = (function () {
 
     function get(action, params, callback) {
         var customUrl = url + getCustomUrl[action](params);
+        log('VOU PEDIR OS DADOS ' + customUrl);
         fetch(customUrl)
             .then(function (response) {
+                log('API RESPONDEU')
                 response.json().then(function (data) {
+                    log('FUNCAO DELICADA QUE CONVERTE RESPOSTA')
                     callback(data);
                 });
             })

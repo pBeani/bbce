@@ -1,18 +1,20 @@
 main {
     display: flex;
     justify-content: space-between;
+    -webkit-justify-content: space-between;
     padding: 50px;
 }
 
 .graph {
-    width: 400px;
+    width: 800px;
     height: 400px;
 }
 
-.money-section {
+.right-section {
     width: 750px;
     display: flex;
     flex-direction: column;
+    -webkit-flex-direction: column;
 }
 
 .card {
@@ -27,16 +29,19 @@ tspan {
 }
 
 /****** conteúdo de moedas ******/
-.money-section .card {
+.money-article .card {
     height: 220px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
 }
 
 .current {
     display: flex;
     flex-direction: column;
+    -webkit-flex-direction: column;
     justify-content: space-between;
+    -webkit-justify-content: space-between;
     height: 100%;
 }
 
