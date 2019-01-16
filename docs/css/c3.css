@@ -7,6 +7,13 @@
 .c3 path, .c3 line {
   fill: none;
   stroke: #9297a0;
+  stroke-width: 1px;
+}
+
+.c3 path {
+  stroke-width: 0;
+}
+.c3-chart-lines path {
   stroke-width: 6px;
 }
 
