@@ -1,0 +1,50 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.graph {
+    width: 400px;
+    height: 400px;
+}
+
+.money-section {
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+tspan {
+    font-size: 14px;
+    fill: #9297a0
+}
+
+/****** conteúdo de moedas ******/
+.money-section .card {
+    height: 220px;
+    display: flex;
+    justify-content: space-between
+}
+
+.current {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.currency {
+    font-size: 24px;
+}
+
+.currency-value {
+    font-size: 96px;
+}
+/****** fim do conteúdo de moedas ******/
