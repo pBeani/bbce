@@ -1,7 +1,13 @@
+function log(message) {
+    var node = document.createElement('LI');
+    var text = document.createTextNode(message);
+    node.appendChild(text);
+    document.getElementById('error').appendChild(node);
+}
 
 (function () {
     function initializeMoneyCharts() {
-
+        log('EXECUTOU A PRIMEIRA FUNCAO')
         function format(value) {
             return parseFloat(value).toFixed(3).replace('.', ',');
         }
@@ -16,6 +22,7 @@
 
         function Chart(id) {
             getDailyFX(id, data => {
+                log('PEGOU OS DADOS DA API PARA ' + id)
                 initializeCurrent(id, data[0].value)
                 var minY = getMin(data, 'value');
                 var maxY = getMax(data, 'value');
@@ -68,13 +75,27 @@
                         }
                     }
                 });
+                log('MONTOU O GRAFICO')
             })
         }
 
         function initizeHistory() {
+            log('VAI COMECAR A EXECUTAR OS GRAFIOCS');
             var usdChart = new Chart('usd');
             var eurChart = new Chart('eur');
             var arsChart = new Chart('ars');
+
+            // TESTE REMOVER
+            var chart = c3.generate({
+                bindto: '#TESTE',
+                data: {
+                    columns: [
+                        ['data1', 30, 200, 100, 400, 150, 250],
+                        ['data2', 50, 20, 10, 40, 15, 25]
+                    ]
+                }
+            });
+            log('CARREGOU O PRIMEIRO GRAFICO(NAO CHAMA API)')
         }
 
         function initializeCurrent(currency, value) {

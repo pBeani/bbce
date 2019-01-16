@@ -15,38 +15,48 @@
 <body>
 	<main>
 		<section class="graph">
-			<div>
+			<div id="TESTE">
 
 			</div>
+			<div class="teste">
+				<ol id="error">
+
+				</ol>
+			</div>
 		</section>
-		<section class="money-section">
-			<div class="card usd">
-				<div class="current">
-					<span class="currency">USD</span>
-					<h2 class="currency-value"></h2>
+		<section class="right-section">
+			<article class="money-article">
+				<div class="card usd">
+					<div class="current">
+						<span class="currency">USD</span>
+						<h2 class="currency-value"></h2>
+					</div>
+					<div class="history">
+						<div class="chart" id="usd"></div>
+					</div>
 				</div>
-				<div class="history">
-					<div class="chart" id="usd"></div>
+				<div class="card eur">
+					<div class="current">
+						<span class="currency">EUR</span>
+						<h2 class="currency-value"></h2>
+					</div>
+					<div class="history">
+						<div class="chart" id="eur"></div>
+					</div>
 				</div>
-			</div>
-			<div class="card eur">
-				<div class="current">
-					<span class="currency">EUR</span>
-					<h2 class="currency-value"></h2>
+				<div class="card ars">
+					<div class="current">
+						<span class="currency">ARS</span>
+						<h2 class="currency-value"></h2>
+					</div>
+					<div class="history">
+						<div class="chart" id="ars"></div>
+					</div>
 				</div>
-				<div class="history">
-					<div class="chart" id="eur"></div>
-				</div>
-			</div>
-			<div class="card ars">
-				<div class="current">
-					<span class="currency">ARS</span>
-					<h2 class="currency-value"></h2>
-				</div>
-				<div class="history">
-					<div class="chart" id="ars"></div>
-				</div>
-			</div>
+			</article>
+			<article>
+
+			</article>
 		</section>
 	</main>
 	<script type="text/javascript" src="js/api.js"></script>
