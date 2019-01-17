@@ -1,17 +1,4 @@
 function initializeMoneyCharts() {
-
-    function format(value) {
-        return parseFloat(value).toFixed(3).replace('.', ',');
-    }
-
-    function getMin(data, target) {
-        return parseFloat(data.reduce(function (min, p) { return p[target] < min ? p[target] : min }, data[0][target]));
-    }
-
-    function getMax(data, target) {
-        return parseFloat(data.reduce(function (max, p) { return p[target] > max ? p[target] : max }, data[0][target]));
-    }
-
     function initializeCurrent(currency, value) {
         document.querySelector('.' + currency + ' .currency-value').innerHTML = format(value);
     }
@@ -41,7 +28,7 @@ function initializeMoneyCharts() {
                     show: false
                 },
                 size: {
-                    width: 170,
+                    width: 180,
                     height: 90
                 },
                 legend: {
