@@ -5,11 +5,14 @@ var API = (function () {
     var getCustomUrl = {
         dailyFX: function (params) {
             var from = params.toUpperCase();
-            return `function=FX_DAILY&from_symbol=${from}&to_symbol=BRL&outputsize=full&apikey=${key2}`;
+            //return `function=FX_DAILY&from_symbol=${from}&to_symbol=BRL&outputsize=full&apikey=${key2}`;
+            return `function=FX_DAILY&from_symbol=USD&to_symbol=BRL&outputsize=full&apikey=MKJI4VYH0ORRBDJR`;
+            
         },
         currentFX: function (params) {
             var from = params.toUpperCase(); 
-            return `function=CURRENCY_EXCHANGE_RATE&from_currency=${from}&to_currency=BRL&apikey=${key}`;
+            //return `function=CURRENCY_EXCHANGE_RATE&from_currency=${from}&to_currency=BRL&apikey=${key}`;
+            return `function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=BRL&apikey=QPE19VY9SFP1X29B`;
         }
     }
 
@@ -31,4 +34,3 @@ var API = (function () {
 
     return { get };
 })();
-log2('api')

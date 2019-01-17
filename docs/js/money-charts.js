@@ -5,7 +5,7 @@ function log(message) {
     document.getElementById('error').appendChild(node);
 }
 
-(function () {
+function main() {
     function initializeMoneyCharts() {
         log('EXECUTOU A PRIMEIRA FUNCAO')
         function format(value) {
@@ -106,5 +106,7 @@ function log(message) {
     }
 
     initializeMoneyCharts();
-})();
+}
+
+main();
 
