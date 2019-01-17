@@ -1,3 +1,4 @@
+log('MONEY_ARCHIVE');
 function log(message) {
     var node = document.createElement('LI');
     var text = document.createTextNode(message);
@@ -8,6 +9,7 @@ log('ABAIXO DO LOG');
 
 function main() {
     initializeMoneyCharts();
+    log('MAIN');
 }
 
 main();
@@ -26,7 +28,7 @@ function getMax(data, target) {
 }
 
 function initializeMoneyCharts() {
-    log('EXECUTOU A PRIMEIRA FUNCAO')
+    log('EXECUTOU A PRIMEIRA FUNCAO');
     //function format(value) {
     //    return parseFloat(value).toFixed(3).replace('.', ',');
     //}
@@ -37,11 +39,14 @@ function initializeMoneyCharts() {
     //    return parseFloat(data.reduce((max, p) => p[target] > max ? p[target] : max, data[0][target]));
     //}
     function Chart(id) {
+        log('CHART');
         getDailyFX(id, function (data) {
             log('PEGOU OS DADOS DA API PARA ' + id);
             initializeCurrent(id, data[0].value);
             var minY = getMin(data, 'value');
+            log('MIN');
             var maxY = getMax(data, 'value');
+            log('MAX');
             this.ref = c3.generate({
                 bindto: '#' + id,
                 data: {
@@ -97,11 +102,9 @@ function initializeMoneyCharts() {
 
     function initizeHistory() {
         log('VAI COMECAR A EXECUTAR OS GRAFICOS');
-        var usdChart = new Chart('usd');
-        var eurChart = new Chart('eur');
-        var arsChart = new Chart('ars');
 
         // TESTE REMOVER
+        log('grafico FAKE');
         var chart = c3.generate({
             bindto: '#TESTE',
             data: {
@@ -111,10 +114,14 @@ function initializeMoneyCharts() {
                 ]
             }
         });
-        log('CARREGOU O PRIMEIRO GRAFICO(NAO CHAMA API)')
+        log('CARREGOU O PRIMEIRO GRAFICO(NAO CHAMA API)');
+        var usdChart = new Chart('usd');
+        var eurChart = new Chart('eur');
+        var arsChart = new Chart('ars');
     }
 
     function initializeCurrent(currency, value) {
+        log('VALOR ATUAL');
         document.querySelector('.' + currency + ' .currency-value').innerHTML = format(value);
     }
 

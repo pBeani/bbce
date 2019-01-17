@@ -1,6 +1,9 @@
+log('API_ARCHIVE');
+
 var url = 'https://www.alphavantage.co/query?';
 var key = 'QPE19VY9SFP1X29B';
 var key2 = 'MKJI4VYH0ORRBDJR';
+
 var getCustomUrl = {
     dailyFX: function (params) {
         var from = params.toUpperCase();
@@ -14,13 +17,14 @@ var getCustomUrl = {
 
 var API = {
     get: function (action, params, callback) {
+        log('VAI CONSULTAR AS URL');
         var customUrl = url + getCustomUrl[action](params);
         log('VOU PEDIR OS DADOS ' + customUrl);
         fetch(customUrl)
             .then(function (response) {
-                log('API RESPONDEU')
+                log('API RESPONDEU');
                 response.json().then(function (data) {
-                    log('FUNCAO DELICADA QUE CONVERTE RESPOSTA')
+                    log('FUNCAO DELICADA QUE CONVERTE RESPOSTA');
                     callback(data);
                 });
             })
