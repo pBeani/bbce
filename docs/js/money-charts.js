@@ -5,8 +5,7 @@ function main() {
 main();
 
 function format(value) {
-    return parseFloat(value).toFixed(3);
-    //return parseFloat(value).toFixed(3).replace('.', ',');
+    return parseFloat(value).toFixed(3).replace('.', ',');
 }
 
 function getMin(data, target) {

@@ -1,7 +1,7 @@
 main {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-between; */
     padding: 50px;
 }
 
@@ -12,9 +12,9 @@ main {
 
 .right-section {
     width: 750px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    -webkit-flex-direction: column;
+    -webkit-flex-direction: column; */
 }
 
 .card {
@@ -29,19 +29,23 @@ tspan {
 }
 
 /****** conteúdo de moedas ******/
+
+.money-article {
+    width: 50%;
+}
 .money-article .card {
     height: 220px;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-between; */
 }
 
 .current {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     -webkit-flex-direction: column;
     justify-content: space-between;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-between; */
     height: 100%;
 }
 
