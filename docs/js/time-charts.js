@@ -16,7 +16,10 @@ function initializeTimeCharts() {
                     value: ['close']
                 },
                 type: 'area',
-                xFormat: '%Y-%m-%d %H:%M:%S'
+                xFormat: '%Y-%m-%d %H:%M:%S',
+                colors: {
+                    close: '#FFC25B'
+                }
             },
             axis: {
                 x: {
