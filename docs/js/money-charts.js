@@ -1,11 +1,4 @@
 log('MONEY_ARCHIVE');
-function log(message) {
-    var node = document.createElement('LI');
-    var text = document.createTextNode(message);
-    node.appendChild(text);
-    document.getElementById('error').appendChild(node);
-}
-log('ABAIXO DO LOG');
 
 function main() {
     initializeMoneyCharts();

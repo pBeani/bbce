@@ -1,3 +1,10 @@
+function log(message) {
+    var node = document.createElement('LI');
+    var text = document.createTextNode(message);
+    node.appendChild(text);
+    document.getElementById('error').appendChild(node);
+}
+
 log('API_ARCHIVE');
 
 var url = 'https://www.alphavantage.co/query?';
