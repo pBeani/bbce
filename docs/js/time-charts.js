@@ -1,60 +1,84 @@
 initializeTimeCharts();
 
 function initializeTimeCharts() {
-    var chart = c3.generate({
-        bindto: '#msft',
-        data: {
-            x: 'x',
-            //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-            columns: [
-                ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-                //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                ['data1', 30, 200, 100, 400, 150, 250],
-                ['data2', 130, 340, 200, 500, 250, 350]
-            ],
-        type: 'area-spline',
 
-        },
-        // regions: [
-        //     {start: '2013-01-01', end: '2013-01-02'},
-        //     {start: '2013-01-03', end: '2013-01-04'},
-        //     {start: '2013-01-05', end: '2013-01-06'}
-        // ],
-        axis: {
-            x: {
-                type: 'timeseries',
-                tick: {
-                    format: '%Y-%m-%d'
+    getTimeSeries({ fullData: true }, function (data) {
+        var minY = getMin(data, 'close');
+        var maxY = getMax(data, 'close');
+        var middle = (minY + maxY) / 2;
+
+        var chart = c3.generate({
+            bindto: '#msft',
+            data: {
+                json: data,
+                keys: {
+                    x: 'date',
+                    value: ['close']
+                },
+                type: 'area',
+                xFormat: '%Y-%m-%d %H:%M:%S',
+                colors: {
+                    close: '#FFC25B'
                 }
             },
-            y: {
-                tick: {
-                    values: [50, 150, 250, 350, 450]
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        outer: false,
+                        format: '%HH:%MM',
+                        count: 4
+                    }
+                },
+                y: {
+                    tick: {
+                        outer: false,
+                        values: [(minY + 0.01).toFixed(3), ((minY + middle) / 2).toFixed(3), (middle).toFixed(3), ((maxY + middle) / 2).toFixed(3), (maxY - 0.01).toFixed(3)],
+                    }
                 }
-            }
-        },
-        size: {
-            width: 600,
-            height: 180
-        },
-        point: {
-            show: false
-        },
-        tooltip: {
-            show: false
-        },
-        legend: {
-            hide: true,
-            position: 'inset'
-        },
-        grid: {
-            y: {
-                show: true
             },
-            x: {
+            area: {
+                zerobased: false
+            },
+            size: {
+                width: 620,
+                height: 180
+            },
+            point: {
                 show: false
+            },
+            tooltip: {
+                show: false
+            },
+            legend: {
+                hide: true,
+                position: 'inset'
+            },
+            grid: {
+                y: {
+                    show: true
+                }
             }
+        });
+
+        function updateChart() {
+            setTimeout(function () {
+                getTimeSeries({ fullData: false }, function (data) {
+                    chart.flow({
+                        duration: 300,
+                        columns: [
+                            ['date', data.date],
+                            ['close', data.close]
+                        ],
+                        done: function () {
+                            updateChart();
+                        }
+                    })
+                })
+            }, 60000);
         }
-    });
+
+        updateChart();
+    })
 }
 

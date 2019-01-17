@@ -14,7 +14,7 @@ main {
 
 tspan {
     font-size: 8px;
-    fill: #9297a0;
+    fill: #c5cbd7;
 }
 
 .align-bottom {
@@ -57,5 +57,9 @@ tspan {
 
 .time-article .chart {
     margin-left: -18px;
+}
+
+.time-article .c3 svg {
+    overflow: visible !important;
 }
 /****** fim do conteúdo por tempo ******/
