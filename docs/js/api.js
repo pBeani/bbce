@@ -31,4 +31,4 @@ var API = (function () {
 
     return { get };
 })();
-alert('api')
+log2('api')
