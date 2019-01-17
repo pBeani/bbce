@@ -5,8 +5,6 @@ function log(message) {
     document.getElementById('error').appendChild(node);
 }
 
-log('API_ARCHIVE');
-
 var url = 'https://www.alphavantage.co/query?';
 var key = 'QPE19VY9SFP1X29B';
 var key2 = 'MKJI4VYH0ORRBDJR';
@@ -24,19 +22,33 @@ var getCustomUrl = {
 
 var API = {
     get: function (action, params, callback) {
-        log('VAI CONSULTAR AS URL');
         var customUrl = url + getCustomUrl[action](params);
-        log('VOU PEDIR OS DADOS ' + customUrl);
-        fetch(customUrl)
-            .then(function (response) {
-                log('API RESPONDEU');
-                response.json().then(function (data) {
-                    log('FUNCAO DELICADA QUE CONVERTE RESPOSTA');
-                    callback(data);
-                });
-            })
-            .catch(function (err) {
-                console.log('Não foi possível obter os dados', err);
-            });
+        log('CHAMADA PARA ' + customUrl);
+
+        var request = new XMLHttpRequest();
+        
+        log('VAI ABRIR REQ')
+        request.open('GET', customUrl, true);
+        log('ABRIU REQ')
+
+        request.onload = function () {
+            log('RETORNOU REQUEST')
+            var response = JSON.parse(this.response);
+            log('CONVERTEU JSON')
+            callback(response);
+        }
+
+        log('VAI ENVIAR REQ')
+        request.send();
+        
+        // fetch(customUrl)
+        //     .then(function (response) {
+        //         response.json().then(function (data) {
+        //             callback(data);
+        //         });
+        //     })
+        //     .catch(function (err) {
+        //         console.log('Não foi possível obter os dados', err);
+        //     });
     }
 }
