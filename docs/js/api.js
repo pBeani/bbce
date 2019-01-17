@@ -23,32 +23,12 @@ var getCustomUrl = {
 var API = {
     get: function (action, params, callback) {
         var customUrl = url + getCustomUrl[action](params);
-        log('CHAMADA PARA ' + customUrl);
-
         var request = new XMLHttpRequest();
-        
-        log('VAI ABRIR REQ')
         request.open('GET', customUrl, true);
-        log('ABRIU REQ')
-
         request.onload = function () {
-            log('RETORNOU REQUEST')
             var response = JSON.parse(this.response);
-            log('CONVERTEU JSON')
             callback(response);
         }
-
-        log('VAI ENVIAR REQ')
         request.send();
-        
-        // fetch(customUrl)
-        //     .then(function (response) {
-        //         response.json().then(function (data) {
-        //             callback(data);
-        //         });
-        //     })
-        //     .catch(function (err) {
-        //         console.log('Não foi possível obter os dados', err);
-        //     });
     }
 }

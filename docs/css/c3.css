@@ -6,7 +6,7 @@
 
 .c3 path, .c3 line {
   fill: none;
-  stroke: #9297a0;
+  stroke: #707a89;
   stroke-width: 1px;
 }
 
@@ -14,7 +14,7 @@
   stroke-width: 0;
 }
 .c3-chart-lines path {
-  stroke-width: 6px;
+  stroke-width: 1px;
 }
 
 .c3 text {
@@ -48,7 +48,7 @@
 /*-- Axis --*/
 /*-- Grid --*/
 .c3-grid line {
-  stroke: #aaa;
+  stroke: #707a89;
 }
 
 .c3-grid text {
