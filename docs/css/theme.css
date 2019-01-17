@@ -3,9 +3,13 @@ body {
 }
 
 .card {
-    background:	#4b5162;
+    background: #4b5162;
     color: #c5cbd7;
     font-family: sans-serif;
+}
+
+.c3-chart-lines path {
+    stroke-width: 2px;
 }
 
 .teste {
@@ -22,4 +26,8 @@ body {
     font-size: 24px;
     color: gray;
     word-wrap: break-word;
+}
+
+.time-article .c3-grid line {
+    stroke: #707a89;
 }
