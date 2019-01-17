@@ -1,26 +1,15 @@
+body.container {
+    width: 100%;
+}
+
 main {
-    /* display: flex;
-    justify-content: space-between;
-    -webkit-justify-content: space-between; */
-    padding: 50px;
-}
-
-.graph {
-    width: 800px;
-    height: 400px;
-}
-
-.right-section {
-    width: 750px;
-    /* display: flex;
-    flex-direction: column;
-    -webkit-flex-direction: column; */
+    padding: 40px;
 }
 
 .card {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     border-radius: 5px;
-    padding: 40px;
+    padding: 30px 25px;
 }
 
 tspan {
@@ -28,24 +17,17 @@ tspan {
     fill: #9297a0
 }
 
+.align-bottom {
+    position: absolute;
+    bottom: 0;
+}
 /****** conteúdo de moedas ******/
 
-.money-article {
-    width: 50%;
-}
 .money-article .card {
-    height: 220px;
-    /* display: flex;
-    justify-content: space-between;
-    -webkit-justify-content: space-between; */
+    height: 180px;
 }
 
 .current {
-    /* display: flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    justify-content: space-between;
-    -webkit-justify-content: space-between; */
     height: 100%;
 }
 
@@ -54,6 +36,6 @@ tspan {
 }
 
 .currency-value {
-    font-size: 96px;
+    font-size: 48px;
 }
 /****** fim do conteúdo de moedas ******/

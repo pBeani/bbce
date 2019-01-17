@@ -51,8 +51,8 @@ function initializeMoneyCharts() {
                     show: false
                 },
                 size: {
-                    width: 300,
-                    height: 160
+                    width: 190,
+                    height: 130
                 },
                 legend: {
                     hide: true,
