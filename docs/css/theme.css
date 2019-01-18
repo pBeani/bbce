@@ -1,6 +1,13 @@
-body {
+#fs-body:-webkit-full-screen {
     background: #383c4a;
-}
+ }
+ #fs-body:full-screen {
+    background: #383c4a;
+ }
+
+ body{
+     background: #383c4a;
+ }
 
 .card {
     background: #4b5162;

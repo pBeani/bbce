@@ -16,3 +16,19 @@ function getMin(data, target) {
 function getMax(data, target) {
     return parseFloat(data.reduce(function (max, p) { return p[target] > max ? p[target] : max }, data[0][target]));
 }
+
+function toggleFullScreenHandler(e, target) {
+    var target = document.getElementById(target);
+    /* Check whether in fullscreen mode */
+    if (document.webkitIsFullScreen) {
+        /* Cancel the fullscreen mode */
+        document.webkitCancelFullScreen();
+    } else {
+        /* Switch on the fullscreen mode */
+        target.webkitRequestFullScreen();
+    }
+}
+
+document.getElementById('usd').addEventListener('click', function(e) {
+    toggleFullScreenHandler(e, 'fs-body')
+}, false);
