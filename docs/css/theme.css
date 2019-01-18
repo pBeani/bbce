@@ -2,6 +2,18 @@ body {
     background-color: #383c4a;
 }
 
+body:fullscreen {
+    background-color: #383c4a;
+}
+
+body:-webkit-full-screen {
+    background-color: #383c4a;
+}
+
+body:-moz-full-screen  {
+    background-color: #383c4a;
+}
+
 #fs-main:fullscreen {
     background-color: #383c4a;
 }
