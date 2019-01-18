@@ -80,3 +80,12 @@ tspan {
     overflow: visible !important;
 }
 /****** fim do conteúdo por tempo ******/
+
+/****** conteúdo da tabela ******/
+
+.table-article .card {
+    height: 220px;
+    padding: 15px;
+}
+
+/****** fim do conteúdo da tabela ******/

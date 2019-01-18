@@ -40,9 +40,20 @@ function getTimeSeries(settings, callback) {
         } else {
             for (var dateTime in data) {
                 var currentObj = data[dateTime];
-                var newValue = {
-                    date: dateTime,
-                    close: currentObj['4. close']
+                var newValue;
+                if (settings.tableData) {
+                    newValue = {
+                        open: currentObj['1. open'],
+                        high: currentObj['2. high'],
+                        low: currentObj['3. low'],
+                        close: currentObj['4. close'],
+                        volume: currentObj['5. volume']
+                    }
+                } else {
+                    newValue = {
+                        date: dateTime,
+                        close: currentObj['4. close']
+                    }
                 }
                 response.push(newValue);
                 break;

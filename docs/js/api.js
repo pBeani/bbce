@@ -9,10 +9,11 @@ var getCustomUrl = {
     },
     currentFX: function (params) {
         var from = params.toUpperCase();
-        return ('function=CURRENCY_EXCHANGE_RATE&from_currency=' + from + '&to_currency=BRL&apikey=' + key);
+        return ('function=CURRENCY_EXCHANGE_RATE&from_currency=' + from + '&to_currency=BRL&apikey=' + key2);
     },
     timeSeries: function (params) {
-        return 'function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey=' + key;
+        var company = params.company || 'MSFT';
+        return 'function=TIME_SERIES_INTRADAY&symbol=' + company + '&interval=1min&apikey=' + key;
     }
 }
 
