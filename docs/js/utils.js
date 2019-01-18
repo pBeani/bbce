@@ -32,3 +32,5 @@ function toggleFullScreenHandler(e, target) {
 document.getElementById('usd').addEventListener('click', function(e) {
     toggleFullScreenHandler(e, 'fs-body')
 }, false);
+
+log('TESTE')
