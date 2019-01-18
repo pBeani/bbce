@@ -25,6 +25,23 @@ tspan {
 .first-col article{
     padding-right: 20px;
 }
+
+#fullScreen {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: #11998e;
+}
+
+#fullScreen img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /****** conteúdo de moedas ******/
 
 .money-article .card {

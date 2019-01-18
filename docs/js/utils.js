@@ -23,14 +23,18 @@ function toggleFullScreenHandler(e, target) {
     if (document.webkitIsFullScreen) {
         /* Cancel the fullscreen mode */
         document.webkitCancelFullScreen();
+        document.getElementById("icon").src="icons/fs.svg";
+        document.getElementById("icon").title="Entrar em tela cheia";
     } else {
         /* Switch on the fullscreen mode */
         target.webkitRequestFullScreen();
+        document.getElementById("icon").src="icons/fs-exit.svg";
+        document.getElementById("icon").title="Sair da tela cheia";
     }
 }
 
-document.getElementById('usd').addEventListener('click', function(e) {
-    toggleFullScreenHandler(e, 'fs-body')
+document.getElementById('fullScreen').addEventListener('click', function(e) {
+    toggleFullScreenHandler(e, 'fs-main')
 }, false);
 
 log('TESTE')
